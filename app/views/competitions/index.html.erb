@@ -1,0 +1,42 @@
+<h1>Listing Competitions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number of Contingent</th>
+      <th>Contingent Debater</th>
+      <th>Contingent Adjudicator</th>
+      <th>Non-Contingent</th>
+      <th>Status</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Quota Point Monetary Value</th>
+      <th colspan="9"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @competitions.each do |competition| %>
+      <tr>
+        <td><%= competition.name %></td>
+        <td><%= competition.number_of_contingent %></td>
+        <td><%= competition.arqp_contingent_debater %></td>
+        <td><%= competition.arqp_contingent_adjudicator %></td>
+        <td><%= competition.arqp_non_contingent %></td>
+        <td><%= competition.status %></td>
+        <td><%= competition.start_date %></td>
+        <td><%= competition.end_date %></td>
+        <td><%= competition.quota_point_monetary_value %></td>
+        <td><%= link_to 'Show', competition %></td>
+        <td><%= link_to 'Edit', edit_competition_path(competition) %></td>
+        <td><%= link_to 'Destroy', competition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Competition', new_competition_path %>
+<%= link_to 'Home', pages_path %>

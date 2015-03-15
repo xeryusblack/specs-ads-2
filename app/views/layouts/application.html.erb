@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ads</title>
+  <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+
+</head>
+
+<body>
+  <% if officer_in_charge_signed_in? %>
+<% @role = Role.find(current_officer_in_charge.role_id).name %>
+  <p><strong>Email</strong>: <%=current_officer_in_charge.email%></p>
+  <p><strong>User Type</strong>: <%= @role%></p>
+
+  <% if @role== "Office of Training and Varsity" %>
+    <p><%= link_to 'Home', pages_path %> | <%= link_to "Contingents", contingents_path %> | <%= link_to "Competitions", competitions_path %> | <%= link_to "Training Activities", training_activities_path %> | <%= link_to "Varsity Members", varsity_members_path %> | <%= link_to "Tryout Intent", tryout_intents_path %></p>
+  <% elsif @role == "Office of Finance" %>
+    <p><%= link_to 'Home', pages_path %> | <%= link_to "Acquired Quota Points", acquired_quota_points_path %> | <%= link_to "Debt Settlements", debt_settlements_path %> | <%= link_to "Varsity Members", varsity_members_path %></p>
+
+    <% elsif @role == "Administrator" %>
+    <p><%= link_to 'Home', pages_path %> | <%= link_to "Acquired Quota Points", acquired_quota_points_path %> | <%= link_to "Debt Settlements", debt_settlements_path %> | <%= link_to "Varsity Members", varsity_members_path %> | <%= link_to "Contingents", contingents_path %> | <%= link_to "Competitions", competitions_path %> | <%= link_to "Training Activities", training_activities_path %> | <%= link_to "Tryout Intent", tryout_intents_path %></p>
+  <% end %>
+  <p><%= link_to "Sign out", destroy_officer_in_charge_session_path%></p>
+
+<% else %>
+  <p><%= link_to "Login", new_officer_in_charge_session_path %></p>
+<% end %>
+
+	<%= yield %> 
+
+</body>
+
+</html>

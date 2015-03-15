@@ -1,0 +1,29 @@
+<h1>Listing Competition Debts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Varsity Member</th>
+      <th>Competition</th>
+      <th>Debt Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @competition_debts.each do |competition_debt| %>
+      <tr>
+        <td><%= competition_debt.varsity_member %></td>
+        <td><%= competition_debt.competition %></td>
+        <td><%= number_to_currency(competition_debt.debt_amount, :unit => "Php") %></td>
+        <td><%= link_to 'Show', competition_debt %></td>
+        <td><%= link_to 'Edit', edit_varsity_member_path(competition_debt) %></td>
+        <td><%= link_to 'Destroy', competition_debt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Competition Debt', new_competition_debt_path %>

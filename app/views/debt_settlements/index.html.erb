@@ -1,0 +1,31 @@
+<h1>Listing Debt Settlements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date Paid</th>
+      <th>Varsity Member</th>
+      <th>Officer</th>
+      <th>Amount Paid</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @debt_settlements.each do |debt_settlement| %>
+      <tr>
+        <td><%= debt_settlement.date_paid %></td>
+        <td><%= debt_settlement.varsity_member %></td>
+        <td><%= debt_settlement.officer_in_charge.id %></td>
+        <td><%= debt_settlement.amount_paid %></td>
+        <td><%= link_to 'Show', debt_settlement %></td>
+        <td><%= link_to 'Edit', edit_debt_settlement_path(debt_settlement) %></td>
+        <td><%= link_to 'Destroy', debt_settlement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Debt Settlement', new_debt_settlement_path %>

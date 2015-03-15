@@ -1,0 +1,29 @@
+<h1>Listing Varsity Members</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Varsity Member</th>
+      <th>Date</th>
+      <th>Debater Position</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tryout_intents.each do |tryout_intent| %>
+      <tr>
+        <td><%= tryout_intent.varsity_member %></td>
+        <td><%= tryout_intent.date %></td>
+        <td><%= tryout_intent.debater_position %></td>
+        <td><%= link_to 'Show', tryout_intent %></td>
+        <td><%= link_to 'Edit', edit_tryout_intent_path(tryout_intent) %></td>
+        <td><%= link_to 'Destroy', tryout_intent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tryout Intent', new_tryout_intent_path %>

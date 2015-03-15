@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Varsity Member:</strong>
+  <%= @competition_debt.varsity_member %>
+</p>
+
+<p>
+  <strong>Competition:</strong>
+  <%= @competition_debt.competition %>
+</p>
+
+<p>
+  <strong>Debt Amount:</strong>
+  <%= number_to_currency(@competition_debt.debt_amount, :unit => "Php") %>
+</p>
+
+<%= link_to 'Edit', edit_competition_debt_path(@competition_debt) %> |
+<%= link_to 'Back', competition_debts_path %>

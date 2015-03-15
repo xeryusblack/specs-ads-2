@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date Paid:</strong>
+  <%= @debt_settlement.date_paid %>
+</p>
+
+<p>
+  <strong>Varsity Member:</strong>
+  <%= @debt_settlement.varsity_member %>
+</p>
+
+<p>
+  <strong>Officer:</strong>
+  <%= @debt_settlement.officer %>
+</p>
+
+<p>
+  <strong>Amount Paid:</strong>
+  <%= @debt_settlement.amount_paid %>
+</p>
+
+<%= link_to 'Edit', edit_debt_settlement_path(@debt_settlement) %> |
+<%= link_to 'Back', debt_settlements_path %>

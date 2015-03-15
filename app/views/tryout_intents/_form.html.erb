@@ -1,0 +1,19 @@
+<%= simple_form_for(@vtryout_intent) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.association :varsity_member %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :debater_position, :as => :select, :collection => TryoutIntent::POSITION, :include_blank => false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<h1>Listing Varsity Members</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Varsity Member</th>
+      <th>Competition</th>
+      <th>Debater Position</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contingents.each do |contingent| %>
+      <tr>
+        <td><%= contingent.varsity_member %></td>
+        <td><%= contingent.comeptition %></td>
+        <td><%= contingent.debater_position %></td>
+        <td><%= link_to 'Show', contingent %></td>
+        <td><%= link_to 'Edit', edit_contingent_path(contingent) %></td>
+        <td><%= link_to 'Destroy', contingent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contingent', new_contingent_path %>

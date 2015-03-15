@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Varsity Member:</strong>
+  <%= @contingent.varsity_member %>
+</p>
+
+<p>
+  <strong>Competition:</strong>
+  <%= @contingent.competition.to_s %>
+</p>
+
+<p>
+  <strong>Debater Position:</strong>
+  <%= @contingent.debater_position %>
+</p>
+
+<%= link_to 'Edit', edit_contingent_path(@contingent) %> |
+<%= link_to 'Back', contingents_path %>

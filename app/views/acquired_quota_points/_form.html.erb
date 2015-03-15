@@ -1,0 +1,28 @@
+<%= simple_nested_form_for(@acquired_quota_point) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.label 'What was the training activity done?' %>
+    <%= f.association :training_activity %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label 'Date Conducted' %>
+    <%= f.date_select :date_conducted %>
+  </div>
+
+
+  <div class="form-inputs">
+    <%= f.fields_for :activity_members do |ff|%>
+      <%= ff.association :varsity_member %>
+
+      <%= ff.input :round %>
+      <%= ff.link_to_remove "Remove" %>
+    <% end %>
+    <p><%= f.link_to_add "Add a member", :activity_members %></p>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

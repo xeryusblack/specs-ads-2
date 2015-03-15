@@ -1,0 +1,27 @@
+<h1>Listing Acquired Quota Points</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Training Activity</th>
+      <th>Date Conducted</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @acquired_quota_points.each do |acquired_quota_point| %>
+      <tr>
+        <td><%= acquired_quota_point.training_activity %></td>
+        <td><%= acquired_quota_point.date_conducted %></td>
+        <td><%= link_to 'Show', acquired_quota_point %></td>
+        <td><%= link_to 'Edit', edit_acquired_quota_point_path(acquired_quota_point) %></td>
+        <td><%= link_to 'Destroy', acquired_quota_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entry', new_acquired_quota_point_path %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @competition.name %>
+</p>
+
+<p>
+  <strong>Number of Contingent:</strong>
+  <%= @competition.number_of_contingent %>
+</p>
+
+<p>
+  <strong>Contingent Debater:</strong>
+  <%= @competition.arqp_contingent_debater %>
+</p>
+
+<p>
+  <strong>Contingent Adjudicator:</strong>
+  <%= @competition.arqp_contingent_adjudicator %>
+</p>
+
+<p>
+  <strong>Non-Contingent:</strong>
+  <%= @competition.arqp_non_contingent %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @competition.status %>
+</p>
+
+<p>
+  <strong>Start Date:</strong>
+  <%= @competition.start_date %>
+</p>
+
+<p>
+  <strong>End Date:</strong>
+  <%= @competition.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_competition_path(@competition) %> |
+<%= link_to 'Back', competitions_path %>

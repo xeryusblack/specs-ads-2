@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @training_activity.name %>
+</p>
+
+<p>
+  <strong>Quota Point Value:</strong>
+  <%= @training_activity.quota_point_value %> 
+</p>
+
+<%= link_to 'Edit', edit_training_activity_path(@training_activity) %> |
+<%= link_to 'Back', training_activities_path %>

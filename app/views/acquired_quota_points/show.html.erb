@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Training Activity:</strong>
+  <%= @acquired_quota_point.training_activity %>
+</p>
+
+<p>
+  <strong>Date Conducted:</strong>
+  <%= @acquired_quota_point.date_conducted %>
+</p>
+
+<p> 
+  <strong>Varsity Member:</strong> 
+</p>
+
+    <table style="width: 100%;">
+    <tr>
+      <th>Name</th>
+      <th>Rounds</th>
+      <th>Amount</th>
+    </tr>
+    <% @acquired_quota_point.activity_members.each do |member| %>
+      <tr>
+        <td><%= member.varsity_member.to_s%></td>
+        <td><%= member.round %></td>
+        <td><%= number_to_currency( @acquired_quota_point.displayAmount(member.id, @acquired_quota_point.training_activity_id ) , :unit => "Php") %></td>
+      </tr>
+    <% end %>
+  </table>
+
+
+<!-- <p>
+  <strong>Amount:</strong>
+  <%= number_to_currency(@acquired_quota_point.amount, :unit => "Php") %>
+</p> -->
+
+<%= link_to 'Edit', edit_acquired_quota_point_path(@acquired_quota_point) %> |
+<%= link_to 'Back', acquired_quota_points_path %>

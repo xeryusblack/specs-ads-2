@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Varsity Member:</strong>
+  <%= @tryout_intent.varsity_member %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @tryout_intent.date %>
+</p>
+
+<p>
+  <strong>Debater Position:</strong>
+  <%= @tryout_intent.debater_position %>
+</p>
+
+<%= link_to 'Edit', edit_tryout_intent_path(@tryout_intent) %> |
+<%= link_to 'Back', tryout_intents_path %>

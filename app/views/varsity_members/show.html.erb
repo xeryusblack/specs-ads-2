@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @varsity_member.vm_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @varsity_member.first_name %> <%= @varsity_member.last_name %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @varsity_member.year %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @varsity_member.course %>
+</p>
+
+<p>
+  <strong>Contact Number:</strong>
+  <%= @varsity_member.contact_number %>
+</p>
+
+<p>
+  <strong>Email Address:</strong>
+  <%= @varsity_member.email_address %>
+</p>
+
+<p>
+  <strong>Varsity Track:</strong>
+  <%= @varsity_member.varsity_track %>
+</p>
+
+<p>
+  <strong>Debater Position:</strong>
+  <%= @varsity_member.debater_position %>
+</p>
+
+<%= link_to 'Edit', edit_varsity_member_path(@varsity_member) %> |
+<%= link_to 'Back', varsity_members_path %>

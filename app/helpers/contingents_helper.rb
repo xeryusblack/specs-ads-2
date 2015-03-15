@@ -1,0 +1,2 @@
+module ContingentsHelper
+end

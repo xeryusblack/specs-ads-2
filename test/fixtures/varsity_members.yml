@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  year: 1
+  course: MyString
+  email_address: MyString
+  contact_number: MyString
+  varsity_track: MyString
+  debater_position: MyString
+  total_debt: 9.99
+  total_acquired_quota_points: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  year: 1
+  course: MyString
+  email_address: MyString
+  contact_number: MyString
+  varsity_track: MyString
+  debater_position: MyString
+  total_debt: 9.99
+  total_acquired_quota_points: 1

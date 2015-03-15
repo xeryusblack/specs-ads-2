@@ -1,0 +1,27 @@
+<h1>Listing Training Activies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quota Point Value</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @training_activities.each do |training_activity| %>
+      <tr>
+        <td><%= training_activity.name %></td>
+        <td><%= training_activity.quota_point_value %></td>
+        <td><%= link_to 'Show', training_activity %></td>
+        <td><%= link_to 'Edit', edit_training_activity_path(training_activity) %></td>
+        <td><%= link_to 'Destroy', training_activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Training Activity', new_training_activity_path %>
